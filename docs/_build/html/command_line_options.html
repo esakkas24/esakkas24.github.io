@@ -1,0 +1,1278 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Command Line Options &#8212; StACKER Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/numpy.css?v=93bf2a1f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=528dc5d9"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'command_line_options';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Molecular Dynamics (MD)" href="molecular_dynamics.html" />
+    <link rel="prev" title="Making Pairwise Stacking Fingerprints (PSFs)" href="pairwise_stacking.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="system_stacking.html">
+    Create System Stacking Fingerprints (SSFs)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="pairwise_stacking.html">
+    Create Pairwise Stacking Fingerprints (PSFs)
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    Command Line Options
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="molecular_dynamics.html">
+    Molecular Dynamics
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/esakkas24/stacker" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pistacker/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://raw.githubusercontent.com/esakkas24/stacker/refs/heads/main/docs/images/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="system_stacking.html">
+    Create System Stacking Fingerprints (SSFs)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="pairwise_stacking.html">
+    Create Pairwise Stacking Fingerprints (PSFs)
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Command Line Options
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="molecular_dynamics.html">
+    Molecular Dynamics
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/esakkas24/stacker" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pistacker/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://raw.githubusercontent.com/esakkas24/stacker/refs/heads/main/docs/images/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/stackerlogo.svg" class="logo__image only-light" alt="StACKER Documentation - Home"/>
+    <img src="_static/stacker_logo_dark.png" class="logo__image only-dark pst-js-only" alt="StACKER Documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/esakkas24/stacker" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pistacker/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://raw.githubusercontent.com/esakkas24/stacker/refs/heads/main/docs/images/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    StACKER documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">API Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.html">stacker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.block_printing.html">stacker.block_printing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.bottaro_routine.html">stacker.bottaro_routine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.combine_frames.html">stacker.combine_frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.compare_routine.html">stacker.compare_routine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.convert_to_python_command.html">stacker.convert_to_python_command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.enable_printing.html">stacker.enable_printing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.filter_traj_routine.html">stacker.filter_traj_routine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.res_distance_routine.html">stacker.res_distance_routine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.run_python_command.html">stacker.run_python_command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.stack_events_routine.html">stacker.stack_events_routine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.system_routine.html">stacker.system_routine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.AtomEmpty.html">stacker.AtomEmpty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.FrameEmpty.html">stacker.FrameEmpty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.InvalidRoutine.html">stacker.InvalidRoutine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.ResEmpty.html">stacker.ResEmpty</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/stacker.file_manipulation.html">file_manipulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.file_manipulation.file_convert.html">stacker.file_manipulation.file_convert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.file_manipulation.filter_traj.html">stacker.file_manipulation.filter_traj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.file_manipulation.filter_traj_to_pdb.html">stacker.file_manipulation.filter_traj_to_pdb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.file_manipulation.SmartIndexingAction.html">SmartIndexingAction</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/stacker.kmeans.html">kmeans</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.kmeans.create_kmeans_input.html">stacker.kmeans.create_kmeans_input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.kmeans.plot_cluster_trj_data.html">stacker.kmeans.plot_cluster_trj_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.kmeans.plot_pca.html">stacker.kmeans.plot_pca</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.kmeans.plot_silhouette.html">stacker.kmeans.plot_silhouette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.kmeans.read_and_preprocess_data.html">stacker.kmeans.read_and_preprocess_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.kmeans.run_kmeans.html">stacker.kmeans.run_kmeans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.html">pairwise_distance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.calculate_residue_distance.html">stacker.pairwise_distance.calculate_residue_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_frame_average.html">stacker.pairwise_distance.get_frame_average</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_residue_distance_for_frame.html">stacker.pairwise_distance.get_residue_distance_for_frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_residue_distance_for_trajectory.html">stacker.pairwise_distance.get_residue_distance_for_trajectory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_top_stacking.html">stacker.pairwise_distance.get_top_stacking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.increment_residue.html">stacker.pairwise_distance.increment_residue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.load_ssfs.html">stacker.pairwise_distance.load_ssfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.system_stacking_fingerprints.html">stacker.pairwise_distance.system_stacking_fingerprints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.MultiFrameTraj.html">stacker.pairwise_distance.MultiFrameTraj</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/stacker.residue_movement.html">residue_movement</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.calc_center_3pts.html">stacker.residue_movement.calc_center_3pts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.calculate_bottaro_values_for_frame.html">stacker.residue_movement.calculate_bottaro_values_for_frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.collect_atom_locations_by_frame.html">stacker.residue_movement.collect_atom_locations_by_frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.correct_theta_sign.html">stacker.residue_movement.correct_theta_sign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.create_base_from_coords_list.html">stacker.residue_movement.create_base_from_coords_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.write_bottaro_to_csv.html">stacker.residue_movement.write_bottaro_to_csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.write_psf_data.html">stacker.residue_movement.write_psf_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.residue_movement.Base.html">Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/stacker.vector.html">vector</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.vector.Vector.html">Vector</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/stacker.visualization.html">visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.create_axis_labels.html">stacker.visualization.create_axis_labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.create_parent_directories.html">stacker.visualization.create_parent_directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.display_arrays_as_video.html">stacker.visualization.display_arrays_as_video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.display_psf_heatmap.html">stacker.visualization.display_psf_heatmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.display_psf_scatter.html">stacker.visualization.display_psf_scatter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.display_ssfs.html">stacker.visualization.display_ssfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.set_polar_grid.html">stacker.visualization.set_polar_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.visualize_two_residue_movement_heatmap.html">stacker.visualization.visualize_two_residue_movement_heatmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.visualize_two_residue_movement_scatterplot.html">stacker.visualization.visualize_two_residue_movement_scatterplot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/stacker.visualization.NoResidues.html">stacker.visualization.NoResidues</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.file_manipulation.html">file_manipulation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.file_manipulation.file_convert.html">stacker.file_manipulation.file_convert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.file_manipulation.filter_traj.html">stacker.file_manipulation.filter_traj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.file_manipulation.filter_traj_to_pdb.html">stacker.file_manipulation.filter_traj_to_pdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.file_manipulation.SmartIndexingAction.html">SmartIndexingAction</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.html">pairwise_distance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.calculate_residue_distance.html">stacker.pairwise_distance.calculate_residue_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_frame_average.html">stacker.pairwise_distance.get_frame_average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_residue_distance_for_frame.html">stacker.pairwise_distance.get_residue_distance_for_frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_residue_distance_for_trajectory.html">stacker.pairwise_distance.get_residue_distance_for_trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.get_top_stacking.html">stacker.pairwise_distance.get_top_stacking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.increment_residue.html">stacker.pairwise_distance.increment_residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.load_ssfs.html">stacker.pairwise_distance.load_ssfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.system_stacking_fingerprints.html">stacker.pairwise_distance.system_stacking_fingerprints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.pairwise_distance.MultiFrameTraj.html">stacker.pairwise_distance.MultiFrameTraj</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.residue_movement.html">residue_movement</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.calc_center_3pts.html">stacker.residue_movement.calc_center_3pts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.calculate_bottaro_values_for_frame.html">stacker.residue_movement.calculate_bottaro_values_for_frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.collect_atom_locations_by_frame.html">stacker.residue_movement.collect_atom_locations_by_frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.correct_theta_sign.html">stacker.residue_movement.correct_theta_sign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.create_base_from_coords_list.html">stacker.residue_movement.create_base_from_coords_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.write_bottaro_to_csv.html">stacker.residue_movement.write_bottaro_to_csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.write_psf_data.html">stacker.residue_movement.write_psf_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.residue_movement.Base.html">Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.visualization.html">visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.create_axis_labels.html">stacker.visualization.create_axis_labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.create_parent_directories.html">stacker.visualization.create_parent_directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.display_arrays_as_video.html">stacker.visualization.display_arrays_as_video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.display_psf_heatmap.html">stacker.visualization.display_psf_heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.display_psf_scatter.html">stacker.visualization.display_psf_scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.display_ssfs.html">stacker.visualization.display_ssfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.set_polar_grid.html">stacker.visualization.set_polar_grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.visualize_two_residue_movement_heatmap.html">stacker.visualization.visualize_two_residue_movement_heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.visualize_two_residue_movement_scatterplot.html">stacker.visualization.visualize_two_residue_movement_scatterplot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.visualization.NoResidues.html">stacker.visualization.NoResidues</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.kmeans.html">kmeans</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.kmeans.create_kmeans_input.html">stacker.kmeans.create_kmeans_input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.kmeans.plot_cluster_trj_data.html">stacker.kmeans.plot_cluster_trj_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.kmeans.plot_pca.html">stacker.kmeans.plot_pca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.kmeans.plot_silhouette.html">stacker.kmeans.plot_silhouette</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.kmeans.read_and_preprocess_data.html">stacker.kmeans.read_and_preprocess_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.kmeans.run_kmeans.html">stacker.kmeans.run_kmeans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/stacker.vector.html">vector</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/stacker.vector.Vector.html">Vector</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="system_stacking.html">Create System Stacking Fingerprints (SSFs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairwise_stacking.html">Create Pairwise Stacking Fingerprints (PSFs)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molecular_dynamics.html">Molecular Dynamics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/esakkas24/stacker" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Command Line Options</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-trajectory">Filtering Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-distance-between-residues">Get Distance Between Residues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-system-stacking-fingerprints-ssfs">Create System Stacking Fingerprints (SSFs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-average-ssf">Get Average SSF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-output">Data Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputting-ssf-data">Inputting SSF Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-ssfs">Combined SSFs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-ssfs">Customizing SSFs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-top-stacking-events">Get Top Stacking Events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-stacking-changes">Get Stacking Changes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="command-line-options">
+<span id="id1"></span><h1>Command Line Options<a class="headerlink" href="#command-line-options" title="Link to this heading">#</a></h1>
+<p>After installing StACKER, the command <code class="docutils literal notranslate"><span class="pre">stacker</span></code> is added
+to terminal. Different routines can be run in the command Line
+using <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">ROUTINE</span></code>. Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">--help</span></code>
+will give the subroutine options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker --help
+usage: stacker -s ROUTINE [-h]
+
+Wrapper to run stacker subroutines using the -s flag.
+More info on each routine given by `stacker -s ROUTINE -h`
+
+options:
+-s, --script ROUTINE  Name of command to use. Options for ROUTINE:
+
+                        filter_traj:
+                                filters trajectory and topology files to desired residue numbers and atom names
+                        bottaro OR pairwise OR psf:
+                                Create Polar Stacking Fingerprint like those in Figure 1 of Bottaro et. al (https://doi.org/10.1093/nar/gku972)
+                        res_distance:
+                                Get the distance between two residues in a given frame
+                        system OR ssf:
+                                Create a System Stacking Fingerprint of distances by residue
+                        stack_events:
+                                Get list of residues with most stacking events (distance closest to 3.5Å)
+                        compare:
+                                Get the most changed stacking events between two fingerprints using the outputs of stacker -s stack_events
+-h, --help            show this help message and exit
+</pre></div>
+</div>
+<section id="filtering-trajectory">
+<h2>Filtering Trajectory<a class="headerlink" href="#filtering-trajectory" title="Link to this heading">#</a></h2>
+<p>Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">filter_traj</span></code> will filter a trajectory by
+residue/atom indices and output the trajectory to a <code class="docutils literal notranslate"><span class="pre">.pdb</span></code>.
+Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">filter_traj</span> <span class="pre">--help</span></code> will give more flag options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s filter_traj --help
+usage: stacker -s ROUTINE -trj TRAJECTORY_FILENAME -top TOPOLOGY_FILENAME -o OUTPUT_FILE [-r RESIDUES] [-a ATOM_NAMES] [-h]
+
+Filters trajectory and topology files to desired residue numbers and atom names and outputs to a PDB
+
+Examples:
+[user]$ stacker -s filter_traj -trj testing/first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd -top testing/5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop -o testing/command_line_tests/filter/5JUP_N2_tUAG_aCUA_+1GCU_nowat_mdcrd.pdb -r 426,427 -a C2,C4,C6
+
+options:
+-s, --script ROUTINE  Name of command to use. Options for ROUTINE:
+
+                        filter_traj:
+                                filters trajectory and topology files to desired residue numbers and atom names
+                        bottaro OR pairwise OR psf:
+                                Create Polar Stacking Fingerprint like those in Figure 1 of Bottaro et. al (https://doi.org/10.1093/nar/gku972)
+                        res_distance:
+                                Get the distance between two residues in a given frame
+                        system OR ssf:
+                                Create a System Stacking Fingerprint of distances by residue
+                        stack_events:
+                                Get list of residues with most stacking events (distance closest to 3.5Å)
+                        compare:
+                                Get the most changed stacking events between two fingerprints using the outputs of stacker -s stack_events
+-r, --residues RESIDUES
+                        Smart-indexed list of 1-indexed residues, also accepts dash (-) list creation (eg. 1-5,10 = 1,2,3,4,5,10)
+-a, --atom_names ATOM_NAMES
+                        Comma-separated list of atom names to filter
+-h, --help            show this help message and exit
+
+Required Arguments:
+-trj, --trajectory TRAJECTORY_FILENAME
+                        Filepath to trajectory file for the MD simulation
+-top, --topology TOPOLOGY_FILENAME
+                        Filepath to Topology file for the MD simulation
+-o, --output OUTPUT_FILE
+                        Filepath of PDB to output to
+</pre></div>
+</div>
+<p>This is the command line equivalent of <a class="reference internal" href="stacker.file_manipulation.html#stacker.file_manipulation.filter_traj_to_pdb" title="stacker.file_manipulation.filter_traj_to_pdb"><code class="xref py py-func docutils literal notranslate"><span class="pre">filter_traj_to_pdb()</span></code></a>. So, the following are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">stacker</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">filter_traj_to_pdb</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">trj_file</span> <span class="o">=</span> <span class="s2">&quot;first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">top_file</span> <span class="o">=</span> <span class="s2">&quot;5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">pdb</span> <span class="o">=</span> <span class="s2">&quot;5JUP_N2_tUAG_aCUA_+1GCU_nowat_mdcrd.pdb&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">residues</span> <span class="o">=</span> <span class="s2">&quot;426,427&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">atoms</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;C2&quot;</span><span class="p">,</span><span class="s2">&quot;C4&quot;</span><span class="p">,</span><span class="s2">&quot;C6&quot;</span><span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user] $ stacker -s filter_traj \
+                -trj first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd \
+                -top 5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop \
+                -o 5JUP_N2_tUAG_aCUA_+1GCU_nowat_mdcrd.pdb \
+                -r 426,427 \
+                -a C2,C4,C6
+</pre></div>
+</div>
+</section>
+<section id="get-distance-between-residues">
+<h2>Get Distance Between Residues<a class="headerlink" href="#get-distance-between-residues" title="Link to this heading">#</a></h2>
+<p>Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">res_distance</span></code> will give the distance in Angstroms
+between the center of geometry of two residues for a given frame.
+Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">res_distance</span> <span class="pre">--help</span></code> will give more flag options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s res_distance --help
+usage: stacker -s ROUTINE -trj TRAJECTORY_FILENAME -top TOPOLOGY_FILENAME [-f FRAME_NUM] -r RESIDUES [-b N_FRAMES] [-a ATOM_NAMES] [-h]
+
+Get the distance between two residues in a given frame
+
+Examples:
+[user]$ stacker -s res_distance -trj testing/first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd -top testing/5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop -f 2 --residues 426,427 --atom_names C2,C4,C6
+
+options:
+-s, --script ROUTINE  Name of command to use. Options for ROUTINE:
+
+                        filter_traj:
+                                filters trajectory and topology files to desired residue numbers and atom names
+                        bottaro OR pairwise OR psf:
+                                Create Polar Stacking Fingerprint like those in Figure 1 of Bottaro et. al (https://doi.org/10.1093/nar/gku972)
+                        res_distance:
+                                Get the distance between two residues in a given frame
+                        system OR ssf:
+                                Create a System Stacking Fingerprint of distances by residue
+                        stack_events:
+                                Get list of residues with most stacking events (distance closest to 3.5Å)
+                        compare:
+                                Get the most changed stacking events between two fingerprints using the outputs of stacker -s stack_events
+-f, --frame FRAME_NUM
+                        1-indexed Frame Number within trajectory to analyze
+-b, --bootstrap N_FRAMES
+                        Run bootstrap analysis on this residue pairing, sampling N_FRAMES with replacement
+-a, --atom_names ATOM_NAMES
+                        Comma-separated list of atom names. Three required to get center of geometry for a residue. default = C2,C4,C6
+-h, --help            show this help message and exit
+
+Required Arguments:
+-trj, --trajectory TRAJECTORY_FILENAME
+                        Filepath to trajectory file for the MD simulation
+-top, --topology TOPOLOGY_FILENAME
+                        Filepath to Topology file for the MD simulation
+-r, --residues RESIDUES
+                        Smart-indexed list of 1-indexed residues, must provide only 2 residues, accepts dash (-) list creation (eg. 1-5,10 = 1,2,3,4,5,10)
+</pre></div>
+</div>
+<p>This is the command line equivalent of <a class="reference internal" href="stacker.pairwise_distance.html#stacker.pairwise_distance.get_residue_distance_for_frame" title="stacker.pairwise_distance.get_residue_distance_for_frame"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_residue_distance_for_frame()</span></code></a>.
+So, the following are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">stacker</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered_traj</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">filter_traj</span><span class="p">(</span><span class="s1">&#39;first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                             <span class="s1">&#39;5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                             <span class="n">residues</span> <span class="o">=</span> <span class="p">{</span><span class="mi">426</span><span class="p">,</span><span class="mi">427</span><span class="p">},</span>
+<span class="gp">... </span>                             <span class="n">atoms</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span><span class="s1">&#39;C4&#39;</span><span class="p">,</span><span class="s1">&#39;C6&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">get_residue_distance_for_frame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">trj</span> <span class="o">=</span> <span class="n">filtered_traj</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">frame</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">res1_atoms</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="s2">&quot;C4&quot;</span><span class="p">,</span> <span class="s2">&quot;C6&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">res2_atoms</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="s2">&quot;C4&quot;</span><span class="p">,</span> <span class="s2">&quot;C6&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">write_output</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="go">...)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user] $ stacker -s res_distance \
+                -trj first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd \
+                -top 5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop \
+                -r 426,427 \
+                -f 3 \
+                -a C2,C4,C6
+</pre></div>
+</div>
+</section>
+<section id="create-system-stacking-fingerprints-ssfs">
+<h2>Create System Stacking Fingerprints (SSFs)<a class="headerlink" href="#create-system-stacking-fingerprints-ssfs" title="Link to this heading">#</a></h2>
+<p>Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">ssf</span></code> will create a System Stacking
+Fingerprint (SSF) for the trajectory, with many options to customize
+the plot outputs. Running <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">ssf</span> <span class="pre">--help</span></code> will give
+more flag options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s ssf --help
+usage: stacker -s ROUTINE -trj TRAJECTORY_FILENAME -top TOPOLOGY_FILENAME [-r RESIDUES] [-i INPUT_FILE] [-f FRAME_NUM | -fl FRAME_LIST] [-o OUTPUT_FILE]
+        [-g N_EVENTS] [-d OUTPUT_FILE] [-B INPUT_FILE] [-l LIMITS] [-y SCALE_STYLE] [-t N_THREADS] [-h]
+
+Creates a System Stacking Fingerprint of the average structure across the chosen frames of a trajectory.
+
+Examples:
+
+[user]$ stacker -s system -trj testing/first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd -top testing/5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop -r 90-215 -fl 1-2
+
+[user]$ stacker -s ssf -trj testing/first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd -top testing/5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop -r 90-215 -fl 1-2 -g 10 -o testing/command_line_tests/pairwise/5JUP_N2_tUAG_aCUA_+1GCU_nowat_pairwise_avg_1to2.png -d testing/command_line_tests/pairwise/5JUP_N2_tUAG_aCUA_+1GCU_data_1to2.txt
+
+options:
+-s, --script ROUTINE  Name of command to use. Options for ROUTINE:
+
+                        filter_traj:
+                        filters trajectory and topology files to desired residue numbers and atom names
+                        bottaro OR pairwise OR psf:
+                        Create Polar Stacking Fingerprint like those in Figure 1 of Bottaro et. al (https://doi.org/10.1093/nar/gku972)
+                        res_distance:
+                        Get the distance between two residues in a given frame
+                        system OR ssf:
+                        Create a System Stacking Fingerprint of distances by residue
+                        stack_events:
+                        Get list of residues with most stacking events (distance closest to 3.5Å)
+                        compare:
+                        Get the most changed stacking events between two fingerprints using the outputs of stacker -s stack_events
+-r, --residues RESIDUES
+                Smart-indexed list of 1-indexed residues, also accepts dash (-) list creation (eg. 1-5,10 = 1,2,3,4,5,10)
+-i, --input INPUT_FILE
+                Input .txt file containing per-frame stacking information, in lieu of running stacking fingerprint analysis again.
+                TXT file can be created by running `stacker -s system -d OUTPUT_FILE`
+                -r flag must match the residues used to create the TXT file
+-f, --frame FRAME_NUM
+                1-indexed Frame Number within trajectory to analyze, cannot be used with -fl
+-fl, --frame_list FRAME_LIST
+                Smart-indexed list of 1-indexed Frame Numbers within trajectory to analyze,
+                gets average distance between residues across these frames
+                if empty all frames are used, cannot be used with -f
+-o, --output OUTPUT_FILE
+                Filename of output PNG to write plot to. If empty, will output displays to Python visual
+-g, --get_stacking N_EVENTS
+                Get list of N_EVENTS residues with most stacking events (distance closest to 3.5Å) in the average structure across all frames.
+                Print to standard output. Equivalent to -s stack_events -n N_EVENTS
+-d, --data_output OUTPUT_FILE
+                Output the calculated per-frame numpy arrays that create the stacking fingerprint matrix to a file
+-B, --input_B INPUT_FILE
+                Input .txt file containing per-frame stacking information for a second fingerprint, creates fingerprint where top left is initial input, bottom right is second fingerprint.
+                        Used in lieu of running stacking fingerprint analysis again.
+                TXT file can be created by running `stacker -s system -d OUTPUT_FILE`
+                -r flag must match the residues used to create the TXT file
+-l, --limits LIMITS   limits of the color scale, default = (0,7)
+-y, --scale_style SCALE_STYLE
+                        style of color scale. {bellcurve, gradient}
+-t, --threads N_THREADS
+                Use multithreading with INT worker threads
+-h, --help            show this help message and exit
+
+Required Arguments:
+-trj, --trajectory TRAJECTORY_FILENAME
+                Filepath to trajectory file for the MD simulation
+-top, --topology TOPOLOGY_FILENAME
+                Filepath to Topology file for the MD simulation
+</pre></div>
+</div>
+<section id="get-average-ssf">
+<h3>Get Average SSF<a class="headerlink" href="#get-average-ssf" title="Link to this heading">#</a></h3>
+<p>The basic SSF Command Line function runs <a class="reference internal" href="stacker.pairwise_distance.html#stacker.pairwise_distance.get_frame_average" title="stacker.pairwise_distance.get_frame_average"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_frame_average()</span></code></a> and
+<a class="reference internal" href="stacker.pairwise_distance.html#stacker.pairwise_distance.system_stacking_fingerprints" title="stacker.pairwise_distance.system_stacking_fingerprints"><code class="xref py py-func docutils literal notranslate"><span class="pre">system_stacking_fingerprints()</span></code></a>, creating an SSF for the
+trajectory averaged across all frames:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">stacker</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered_traj</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">filter_traj</span><span class="p">(</span><span class="s1">&#39;first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd&#39;</span><span class="p">,</span>
+<span class="go">                    &#39;5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop&#39;,</span>
+<span class="go">                    residues = &#39;90-215&#39;,</span>
+<span class="go">                    atoms = {&#39;C2&#39;,&#39;C4&#39;,&#39;C6&#39;})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ssfs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">system_stacking_fingerprints</span><span class="p">(</span><span class="n">filtered_traj</span><span class="p">,</span> <span class="n">frames</span> <span class="o">=</span> <span class="s1">&#39;1-2&#39;</span><span class="p">,</span> <span class="n">write_output</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">avg_ssf</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">get_frame_average</span><span class="p">(</span><span class="n">ssfs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resSeqs</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">resSeq</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">filtered_traj</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">residues</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">display_ssfs</span><span class="p">(</span><span class="n">avg_ssf</span><span class="p">,</span> <span class="n">resSeqs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s ssf \
+                -trj first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd \
+                -top 5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop \
+                -r 90-215 \
+                -fl 1-2
+</pre></div>
+</div>
+</section>
+<section id="data-output">
+<h3>Data Output<a class="headerlink" href="#data-output" title="Link to this heading">#</a></h3>
+<p>There are three important flags to output the SSF data:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-o,</span> <span class="pre">--output</span> <span class="pre">OUTPUT_FILE</span></code> : Save SSF to an output PNG <code class="docutils literal notranslate"><span class="pre">OUTPUT_FILE</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-g,</span> <span class="pre">--get_stacking</span> <span class="pre">N_EVENTS</span></code> : Prints top stacking pairs to standard output.</p></li>
+</ul>
+<p>Equivalent to <a class="reference internal" href="stacker.pairwise_distance.html#stacker.pairwise_distance.get_top_stacking" title="stacker.pairwise_distance.get_top_stacking"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_top_stacking()</span></code></a>, where <code class="docutils literal notranslate"><span class="pre">N_EVENTS</span></code> is the <code class="docutils literal notranslate"><span class="pre">n_events</span></code> parameter.
+- <code class="docutils literal notranslate"><span class="pre">-d,</span> <span class="pre">--data_output</span> <span class="pre">OUTPUT_FILE</span></code> : Output the list of SSFs to <code class="docutils literal notranslate"><span class="pre">.txt.gz</span></code>. You can input
+this SSF data rather than recalculate each time.</p>
+<p>Expanding on the command above, we create SSFs for frames 1-10 and use
+<code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">10</span></code> to calculate them in parallel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s ssf \
+        -trj first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd \
+        -top 5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop \
+        -r 90-215 \
+        -fl 1-10 \
+        -o 5JUP_N2_tUAG_aCUA_+1GCU_nowat.SSF.png \
+        -d 5JUP_N2_tUAG_aCUA_+1GCU_nowat.data.txt.gz \
+        -g 5 \
+        -t 10
+Res1    Res2    Avg_Dist
+117     108     3.43
+127     94      3.67
+93      130     3.68
+177     204     3.80
+197     195     3.85
+</pre></div>
+</div>
+<p>This outputs the average SSF for frames 1-10 to <code class="docutils literal notranslate"><span class="pre">5JUP_N2_tUAG_aCUA_+1GCU_nowat.SSF.png</span></code>:</p>
+<p>The list of top stacking events can be customized much further via the
+<code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">stack_events</span></code> command. See “Get Top Stacking Events” below.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-d</span></code> flag above outputs the SSF data for each frame to
+<code class="docutils literal notranslate"><span class="pre">5JUP_N2_tUAG_aCUA_+1GCU_nowat.data.txt.gz</span></code>. We can read this into a
+Python object representing the 10 frames of 126x126 residue SSFs
+with <a class="reference internal" href="stacker.pairwise_distance.html#stacker.pairwise_distance.load_ssfs" title="stacker.pairwise_distance.load_ssfs"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_ssfs()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">stacker</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ssfs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">load_ssfs</span><span class="p">(</span><span class="s2">&quot;5JUP_N2_tUAG_aCUA_+1GCU_nowat.data.txt.gz&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ssfs</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(10, 126, 126)</span>
+</pre></div>
+</div>
+</section>
+<section id="inputting-ssf-data">
+<h3>Inputting SSF Data<a class="headerlink" href="#inputting-ssf-data" title="Link to this heading">#</a></h3>
+<p>In lieu of recalculating SSF data for a trajectory, the <code class="docutils literal notranslate"><span class="pre">.txt.gz</span></code> file
+outputted by <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">ssf</span> <span class="pre">-d</span> <span class="pre">OUTFILE</span></code> can be loaded in using:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-i,</span> <span class="pre">--input</span> <span class="pre">INPUT_FILE</span></code> : A <code class="docutils literal notranslate"><span class="pre">.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">.txt.gz</span></code> containing per-frame SSF</p></li>
+</ul>
+<p>data created by <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">ssf</span> <span class="pre">-d</span> <span class="pre">OUTFILE</span></code>.
+- <code class="docutils literal notranslate"><span class="pre">-B,</span> <span class="pre">--input_B</span> <span class="pre">INPUT_FILE</span></code> : A second <code class="docutils literal notranslate"><span class="pre">.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">.txt.gz</span></code> file that will be displayed
+on the bottom left of the output SSF, allowing comparison between two SSFs. Must be the same
+shape as the data inputted by the <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag.</p>
+<p>When using these, the <code class="docutils literal notranslate"><span class="pre">-trj</span></code>, <code class="docutils literal notranslate"><span class="pre">-top</span></code>, and <code class="docutils literal notranslate"><span class="pre">-r</span></code> flags should be the same as those used
+to create either input. In the code below, we input two <code class="docutils literal notranslate"><span class="pre">.txt.gz</span></code> files representing SSF
+data from the same structure with two different mRNA codons:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s ssf \
+        -trj 5JUP_N2_tGGG_aCCU_+1GCU_nowat_2fpns.mdcrd \
+        -top 5JUP_N2_tGGG_aCCU_+1GCU_nowat.prmtop \
+        -r 2-5,13-16,23-31,46-51,65-76,88-104,122-141,164-175,184-198,288-289,401-415,420-430 \
+        -i 5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz
+</pre></div>
+</div>
+<img alt="_images/inputted_ssf.png" src="_images/inputted_ssf.png" />
+<p>This will output the average SSF in minutes, as opposed to the hours it took to calculate
+the <code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz</span></code> input data.</p>
+</section>
+</section>
+<section id="combined-ssfs">
+<h2>Combined SSFs<a class="headerlink" href="#combined-ssfs" title="Link to this heading">#</a></h2>
+<p>The line over <code class="docutils literal notranslate"><span class="pre">x=y</span></code> indicates that the SSF is symmetrical. This makes sense,
+as the distance from residue <code class="docutils literal notranslate"><span class="pre">i</span></code> to <code class="docutils literal notranslate"><span class="pre">j</span></code> is the same as from <code class="docutils literal notranslate"><span class="pre">j</span></code> to <code class="docutils literal notranslate"><span class="pre">i</span></code>.
+We can remove this redundancy by adding another trajectory’s SSF in the bottom left
+half, for ease of comparison:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s ssf \
+        -trj 5JUP_N2_tGGG_aCCU_+1GCU_nowat_2fpns.mdcrd \
+        -top 5JUP_N2_tGGG_aCCU_+1GCU_nowat.prmtop \
+        -r 2-5,13-16,23-31,46-51,65-76,88-104,122-141,164-175,184-198,288-289,401-415,420-430 \
+        -i 5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz \
+        -B 5JUP_N2_tGGG_aCCU_+1CGU_data.txt.gz
+</pre></div>
+</div>
+<img alt="_images/combined_ssf.png" src="_images/combined_ssf.png" />
+<p>To get the residue pairs whose stacking changed the most between the two SSFs,
+see “Get Stacking Changes”.</p>
+<section id="customizing-ssfs">
+<h3>Customizing SSFs<a class="headerlink" href="#customizing-ssfs" title="Link to this heading">#</a></h3>
+<p>We can customize SSFs to color stacking events more stringently:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-l,</span> <span class="pre">--limits</span> <span class="pre">LIMITS</span></code> : limits of the color scale, default = (0,7). Helps limit the pairings</p></li>
+</ul>
+<p>visualized as pi-stacking.
+- <code class="docutils literal notranslate"><span class="pre">-y,</span> <span class="pre">--scale_style</span> <span class="pre">SCALE_STYLE</span></code> : style of color scale. {bellcurve, gradient}</p>
+<p>The SSFs we’ve displayed so far used the default <code class="docutils literal notranslate"><span class="pre">limits</span> <span class="pre">=</span> <span class="pre">(0,7)</span></code> and <code class="docutils literal notranslate"><span class="pre">scale_style</span> <span class="pre">=</span> <span class="pre">bellcurve</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">scale_style</span></code> parameter can help label rare &lt;3.5Å stacking events as stacking rather than
+the lighter color caused by <code class="docutils literal notranslate"><span class="pre">bellcurve</span></code>. Sterics generally prevent nucleotides from anything &lt;3.4Å,
+so this scale generally changes nothing and is a matter of personal preference.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s ssf \
+        -trj first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd \
+        -top 5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop \
+        -r 90-215 \
+        -fl 1-10 \
+        -t 10 \
+        -l 2,5 \
+        -y gradient
+</pre></div>
+</div>
+<img alt="_images/scaled_ssf.png" src="_images/scaled_ssf.png" />
+</section>
+</section>
+<section id="get-top-stacking-events">
+<h2>Get Top Stacking Events<a class="headerlink" href="#get-top-stacking-events" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">stack_events</span></code> gives the top pi-stacking events (ie. the residue
+pairs with COG distance closest to 3.5Å) for a given trajectory. A few important
+flags:
+- <code class="docutils literal notranslate"><span class="pre">-i,</span> <span class="pre">--input</span> <span class="pre">INPUT_FILE</span></code> : A <code class="docutils literal notranslate"><span class="pre">.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">.txt.gz</span></code> containing per-frame SSF
+data created by <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">ssf</span> <span class="pre">-d</span> <span class="pre">OUTFILE</span></code>.
+- <code class="docutils literal notranslate"><span class="pre">-o,</span> <span class="pre">--output</span> <span class="pre">OUTPUT_FILE</span></code> : spreadsheet output goes to a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file. Used for future analysis.
+- <code class="docutils literal notranslate"><span class="pre">-n,</span> <span class="pre">--n_events</span> <span class="pre">N_EVENTS</span></code> : show top <code class="docutils literal notranslate"><span class="pre">N_EVENTS</span></code> stacking events. We use <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">-1</span></code>, which
+outputs all residue pairs and their COG distance.
+- <code class="docutils literal notranslate"><span class="pre">-j,</span> <span class="pre">--include_adjacent</span></code> : Include adjacent residues in the printed output. These
+are much more likely to be stacking, you may be interested in only non-consecutive stacking residues.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s stack_events \
+        -trj 5JUP_N2_tGGG_aCCU_+1GCU_nowat_2fpns.mdcrd \
+        -top TOPOLOGIES/5JUP_N2_tGGG_aCCU_+1GCU_nowat.prmtop \
+        -r 2-5,13-16,23-31,46-51,65-76,88-104,122-141,164-175,184-198,288-289,401-415,420-430 \
+        -i 5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz \
+        -o stack_events.GCU.txt  \
+        -n -1 \
+        -j
+WARNING: Residue Indices are expected to be 1-indexed
+Reading trajectory...
+Reading topology...
+Filtering trajectory...
+WARNING: Output filtered traj atom, residue, and chain indices are zero-indexed
+</pre></div>
+</div>
+<p>The stacking events are outputted to <code class="docutils literal notranslate"><span class="pre">stack_events.GCU.txt</span></code>. We can look at this file
+to find the residue pairs closest to 3.5Å apart—those that are pi-stacking.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ head stack_events.GCU.txt
+Res1    Res2    Avg_Dist
+101     102     3.55
+139     138     3.61
+130     93      3.63
+172     170     3.68
+172     173     3.70
+48      49      3.71
+47      48      3.72
+129     130     3.76
+136     97      3.78
+</pre></div>
+</div>
+</section>
+<section id="get-stacking-changes">
+<h2>Get Stacking Changes<a class="headerlink" href="#get-stacking-changes" title="Link to this heading">#</a></h2>
+<p>Once we have used <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">stack_events</span></code> to get the top stacking events
+for a single trajectory, we can run <code class="docutils literal notranslate"><span class="pre">stacker</span> <span class="pre">-s</span> <span class="pre">compare</span></code> to get the residue
+pairs that changed the most between two different trajectories. These trajectories
+must be comparable (ie. have the same number of residues). Generally, they should
+be the same structure with very minor tweaks. The two trajectories used below are
+the same ribosome PDB with one codon of the mRNA changed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user]$ stacker -s compare \
+        -A stack_events.GCU.txt \
+        -B stack_events.CGU.txt \
+        -SA _tGGG_aCCU_+1GCU \
+        -SB _tGGG_aCCU_+1CGU
+
+Res1  Res2  Avg_Dist_tGGG_aCCU_+1GCU  Avg_Dist_tGGG_aCCU_+1CGU  Discrepancy
+47    48                      3.72                      4.30         0.58
+48    49                      3.71                      4.20         0.49
+122   123                      4.23                      3.75         0.48
+66    67                      3.98                      4.31         0.33
+133   134                      4.07                      3.75         0.32
+91    92                      3.91                      4.19         0.28
+95   138                      3.84                      4.11         0.27
+170   172                      3.68                      3.95         0.27
+422   423                      3.87                      4.11         0.24
+138   139                      3.61                      3.82         0.21
+</pre></div>
+</div>
+<p>The output shows the average stacking distance between the residues in one trajectory
+compared to the other, and lists them by the residue pairs whose stacking distance changed
+the most.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pairwise_stacking.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Making Pairwise Stacking Fingerprints (PSFs)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="molecular_dynamics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Molecular Dynamics (MD)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-trajectory">Filtering Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-distance-between-residues">Get Distance Between Residues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-system-stacking-fingerprints-ssfs">Create System Stacking Fingerprints (SSFs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-average-ssf">Get Average SSF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-output">Data Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputting-ssf-data">Inputting SSF Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-ssfs">Combined SSFs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-ssfs">Customizing SSFs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-top-stacking-events">Get Top Stacking Events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-stacking-changes">Get Stacking Changes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eric D. Sakkas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Eric D. Sakkas.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

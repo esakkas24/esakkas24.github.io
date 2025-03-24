@@ -8,7 +8,7 @@ Once you've identified a pi-stacking residue pair, you can use StACKER to
 characterize the type of stacking occuring using Pairwise Stacking Fingerprints (PSFs)
 like the one below.
 
-.. image:: ../testing/script_tests/visualization/tUAG_aCUA_+1GCU_GC_plot_heat.png
+.. image:: ./images/tUAG_aCUA_+1GCU_GC_plot_heat.png
 
 .. currentmodule:: stacker.pairwise_distance
 
@@ -24,7 +24,7 @@ In this example pipeline, we use a trajectory of the
 found in the `StACKER GitHub Repository <https://github.com/esakkas24/stacker/tree/main/testing>`_.
 We filter this trajectory to the pi-stacking residue pair.
 
-MD Files are provided for testing convenience in the testing folder:
+MD Files are provided for testing convenience in the ``testing`` folder:
 
 - ``first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd``: A 10-frame trajectory file with all atoms/residues.
 - ``5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop``: The associated Topology File with the above trajectory.
@@ -37,10 +37,10 @@ using :func:`filter_traj_to_pdb`::
 
     >>> import stacker as st
     >>> st.filter_traj_to_pdb("first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.mdcrd", 
-    ...                       topology_filename = "5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop", 
-    ...                       output_pdb_filename = "first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.pdb",
-    ...                       residues_desired = {426, 427}, 
-    ...                       atomnames_desired = {"C2", "C4", "C6"})
+    ...                       top_file = "5JUP_N2_tUAG_aCUA_+1GCU_nowat.prmtop", 
+    ...                       pdb = "first10_5JUP_N2_tUAG_aCUA_+1GCU_nowat.pdb",
+    ...                       residues = {426, 427}, 
+    ...                       atomnames = {"C2", "C4", "C6"})
     WARNING: Residue Indices are expected to be 1-indexed
     Reading trajectory...
     Reading topology...
@@ -76,9 +76,9 @@ We use :func:`write_psf_data` to extract this data from the PDB to a CSV::
 
     >>> import stacker as st
     >>> st.write_psf_data("5JUP_N2_tUAG_aCUA_+1GCU_nowat_mdcrd_3200frames.pdb",
-    ...                         output_csv_name = "script_tests/residue_movement/tUAG_aCUA_+1GCU_GC_plot.csv",
-    ...                         perspective_residue_num = 426,
-    ...                         viewed_residue_num = 427)
+    ...                         outcsv = "script_tests/residue_movement/tUAG_aCUA_+1GCU_GC_plot.csv",
+    ...                         pers_res = 426,
+    ...                         view_res = 427)
     Output values written to script_tests/residue_movement/tUAG_aCUA_+1GCU_GC_plot.csv
     >>> print("".join(open("script_tests/residue_movement/tUAG_aCUA_+1GCU_GC_plot.csv").readlines()[:10]))
     frame,r_dist,rho_dist,theta

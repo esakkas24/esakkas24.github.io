@@ -44,7 +44,7 @@ of this function. This is often presented as a Potential Energy Surface (PES).
 Figure 1.1.1 shows the PES for water, where the potential energy function 
 takes in two values, H-O-H bond angle and bond length, then returns the potential 
 energy. By inputting two numbers and outputting one, we say our potential 
-energy function U is a mapping :math:`\(U : \mathbb{R}^2 \to \mathbb{R}\)`. 
+energy function U is a mapping :math:`$U : \mathbb{R}^2 \to \mathbb{R}$`. 
 A stable structure would be found at 
 an energy minimum, the lowest point on the surface.
 
@@ -57,11 +57,11 @@ angle of 104.5° and a bond length of 0.0958 nm (Scopino, 2020).*
 
 For our ribosome system, that has thousands of atoms, our potential energy 
 function U takes the x-, y-, z-coordinates of all of the atoms as input. 
-With N atoms, this makes U a mapping :math:`\(U: \mathbb{R}^{3N}\to\mathbb{R}\)`, 
+With N atoms, this makes U a mapping :math:`$U: \mathbb{R}^{3N}\to\mathbb{R}$`, 
 meaning we need 3N+1 axes to 
 visualize the surface, which is impossible supposing a three-dimensional thesis 
 reader. The lack of visualization does not, however, presuppose the lack of a minimum. 
-A popular example is the function :math:`\(T: \mathbb{R}^{3} \to \mathbb{R}\)`, where T(x,y,z) 
+A popular example is the function :math:`$T: \mathbb{R}^{3} \to \mathbb{R}$`, where T(x,y,z) 
 is the temperature 
 of a room at position (x, y, z) in 3D coordinates. We cannot visualize this function, 
 as we would need all three dimensions for our x-, y-, z-positions and would have none 
@@ -90,7 +90,7 @@ the potential energy induced by the stretching and compressing of all bonds
 in the structure.
 
 .. math::
-  \(U = \sum_{bonds}\frac{1}{2}k_b(r-r_0)^2\)
+  U = \sum_{bonds}\frac{1}{2}k_b(r-r_0)^2
 
 This is a strong start, but we can include a number of other factors. 
 The oscillation of bond angles 𝜃, for instance, can also be modeled 
@@ -99,8 +99,8 @@ the bond rotation 𝜙. Adding these to our equation gives us:
 
 
 .. math::
-  \(U = \sum_{bonds}\frac{1}{2}k_b(r-r_0)^2 + \sum_{angles}\frac{1}{2}k_{\theta}(\theta-\theta_0)^2
-  +\sum_{torsions}[1+cos(n\phi + \delta)]\)
+  U = \sum_{bonds}\frac{1}{2}k_b(r-r_0)^2 + \sum_{angles}\frac{1}{2}k_{\theta}(\theta-\theta_0)^2
+  +\sum_{torsions}[1+cos(n\phi + \delta)]
 
 
 Finally, we include strain due to improper dihedrals, the force that 
@@ -112,12 +112,12 @@ form a complete force field equation to estimate the system's
 potential energy (Cowan, 2022).
 
 .. math::
-  \(U = \sum_{bonds}\frac{1}{2}k_b(r-r_0)^2 + \sum_{angles}\frac{1}{2}k_{\theta}(\theta-\theta_0)^2
-  +\sum_{torsions}[1+cos(n\phi + \delta)]\)
+  U = \sum_{bonds}\frac{1}{2}k_b(r-r_0)^2 + \sum_{angles}\frac{1}{2}k_{\theta}(\theta-\theta_0)^2
+  +\sum_{torsions}[1+cos(n\phi + \delta)]
   
 .. math::
-  \( + \sum_{improper}V_{imp}+ \sum_{LJ}4\epsilon_{ij}\left(\frac{\sigma_{ij}^{12}}{r_{ij}^{12}}-\frac{\sigma_{ij}^{6}}{r_{ij}^{6}}\right) 
-  + \sum_{elec}\frac{q_iq_j}{r_{ij}}\)
+   + \sum_{improper}V_{imp}+ \sum_{LJ}4\epsilon_{ij}\left(\frac{\sigma_{ij}^{12}}{r_{ij}^{12}}-\frac{\sigma_{ij}^{6}}{r_{ij}^{6}}\right) 
+  + \sum_{elec}\frac{q_iq_j}{r_{ij}}
 
 
 .. image:: md_images/media/bonds.png

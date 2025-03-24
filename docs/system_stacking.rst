@@ -270,7 +270,7 @@ Or the files can be read and prepared for KMeans data
     ...     ["testing/5JUP_N2_tGGG_aCCU_+1CGU_data.txt.gz",
     ...     "testing/5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz"]
     ... )
-    >>> st.run_kmeans(data_arrays, N_CLUSTERS = 2)
+    >>> st.run_kmeans(data_arrays, n_clusters = 2)
     (6400, 16129)
     For n_clusters = 2 The average silhouette_score is : 0.10815289849518733
     Dataset: 5JUP_N2_tGGG_aCCU_+1CGU_data
@@ -288,7 +288,7 @@ We can visualize this with :func:`plot_cluster_trj_data`::
     ...     ["testing/5JUP_N2_tGGG_aCCU_+1CGU_data.txt.gz",
     ...     "testing/5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz"]
     ... )
-    >>> st.run_kmeans(data_arrays, N_CLUSTERS = 7, outdir = 'testing/')
+    >>> st.run_kmeans(data_arrays, n_clusters = 7, outdir = 'testing/')
     (6400, 16129)
     For n_clusters = 7 The average silhouette_score is : 0.09968523895626617
     Dataset: 5JUP_N2_tGGG_aCCU_+1CGU_data
@@ -332,7 +332,7 @@ can create Silhouette Plots::
     >>> blinded_data = st.create_kmeans_input(data_arrays)
     (6400, 16129)
     >>> for n_cluster in range(2,8):
-    ...     st.run_kmeans(data_arrays, N_CLUSTERS = n_cluster, outdir = 'testing/')
+    ...     st.run_kmeans(data_arrays, n_clusters = n_cluster, outdir = 'testing/')
     ...     st.plot_silhouette(n_cluster, blinded_data, outdir = 'testing/')
     (6400, 16129)
     For n_clusters = 2 The average silhouette_score is : 0.10815289849518733
@@ -415,7 +415,7 @@ their KMeans result with 6 clusters::
     Reading data: 5JUP_N2_tGGG_aCCU_+1GCU_data.txt.gz
     >>> blinded_data = st.create_kmeans_input(data_arrays)
     (6400, 16129)
-    >>> kmeans_results = st.run_kmeans(data_arrays, N_CLUSTERS=6)
+    >>> kmeans_results = st.run_kmeans(data_arrays, n_clusters=6)
     (6400, 16129)
     For n_clusters = 6 The average silhouette_score is : 0.09343055568735036
     Dataset: 5JUP_N2_tGGG_aCCU_+1CGU_data

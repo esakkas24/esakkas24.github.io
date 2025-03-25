@@ -63,8 +63,8 @@ COG distance close to 3.5 Å indicates pi-stacking. For instance, the A-site mRN
 
     >>> distance_vec = st.calculate_residue_distance(
     ...     filtered_traj,
-    ...     res1_num = 422,
-    ...     res2_num = 423,
+    ...     res1 = 422,
+    ...     res2 = 423,
     ...     frame = 3
     ... )
     >>> distance_vec.magnitude()
